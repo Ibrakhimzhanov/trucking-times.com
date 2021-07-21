@@ -1,0 +1,78 @@
+.hero 
+    position: relative
+    z-index: 3
+    color: rgb(255, 255, 255)
+    &__scroll
+        display: inline-block
+        position: absolute
+        bottom: -300px
+        left: 10px
+        font-size: 18px
+        text-decoration: none
+        color: #fff
+        +bold
+        &__text
+            transform: rotate(-90deg)
+        &__icon
+            position: absolute
+            left: 33px
+            bottom: -105px
+            width: 20px
+            animation-duration: 2s
+            animation-name: bounce-1
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+            @keyframes bounce-1 
+                0% 
+                    -webkit-transform: translateY(0)
+                    transform: translateY(0)
+                
+                50% 
+                    -webkit-transform: translateY(-15px)
+                    transform: translateY(-15px)
+                
+                100% 
+                    -webkit-transform: translateY(0)
+                    transform: translateY(0)  
+    &-line
+        position: absolute
+        left: 0
+        top: 73px        
+        width: 45px
+        height: 1px
+        background: $light-color
+    &-title
+        font-size: 28px
+        margin-bottom: 1rem
+    &-infoBox
+        position: absolute
+        background: $bg-color url('../img/hero/sicles.svg') no-repeat right -300px bottom -300px
+        background-size: auto 600px
+        right: 0
+        top: 340px
+        display: block
+        height: 540px
+        min-width: 33%
+        padding: 50px 40px
+        &__right,&__left
+            display: inline-block
+        &__left 
+            background: #000
+            margin-right: 30px
+        &-wrap
+            background: indigo
+            +bold
+            display: block
+        &__dig
+            display: block
+            font-size: 25px
+            color: $light-color
+            margin-top: 20px
+            margin-bottom: 50px
+        &__desc
+            padding-top: 10px
+            display: block
+            color: #fff
+    &-line
+    &-title
+        

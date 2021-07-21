@@ -14,29 +14,236 @@
   font-style: normal;
 }
 
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   font-size: 1rem;
   font-family: 'Circe Light', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+header {
+  position: relative;
+  min-height: 980px;
+  background: rgba(72, 0, 122, 0.5) url("../img/hero/main.jpg") no-repeat top -350px right 0px;
+  background-size: cover;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  background-color: rgba(72, 0, 122, 0.5);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
 }
 
 .navbar-wrap {
+  padding-left: 30px;
+  width: 100%;
   display: flex;
   align-items: center;
-  min-height: 80px;
-  background-color: rgba(72, 0, 122, 0.5);
-  padding: 0px;
-  margin: 0px;
-  font-size: 1.25rem;
 }
 
 .navbar__logo {
-  background-color: #333;
-  display: inline-block;
-  padding-left: 100px;
-  margin-right: 1rem;
+  margin-right: 20px;
 }
 
 .navbar__logo img {
-  width: 180px;
+  max-width: 180px;
+  vertical-align: middle;
+}
+
+.navbar a i {
+  color: #ccc;
+  font-size: 25px;
+  padding: 0 7px;
+}
+
+.navbar a i:hover {
+  color: #04ff14;
+  transition: all .1s;
+}
+
+.navbar-phone {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 22px;
+  margin-left: 20px;
+  font-family: 'Circe Bold', Arial, Helvetica, sans-serif;
+}
+
+.navbar-phone:hover {
+  color: #fff;
+}
+
+.navbar-phone__icon {
+  margin-left: 15px;
+  transform: rotate(90deg);
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-grow: 1;
+}
+
+.navbar-collapse .nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar-collapse .nav-item {
+  padding: 30px 10px;
+}
+
+.navbar-collapse .nav-item:last-child {
+  padding: 30px 15px;
+  transition: all .5s ease;
+  cursor: pointer;
+  background: rgba(4, 255, 20, 0.7);
+}
+
+.navbar-collapse .nav-item:last-child a {
+  color: #000;
+  font-family: 'Circe Bold', Arial, Helvetica, sans-serif;
+}
+
+.navbar-collapse .nav-item:last-child:hover {
+  background: #04ff14;
+}
+
+.navbar-collapse .nav-item__link {
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 20px;
+  font-family: 'Circe Light', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: .5rem .5rem .5rem 1rem;
+}
+
+.navbar-collapse .nav-item__link:hover {
+  color: #04ff14;
+  transition: all .1s;
+}
+
+.hero {
+  position: relative;
+  z-index: 3;
+  color: white;
+}
+
+.hero__scroll {
+  display: inline-block;
+  position: absolute;
+  bottom: -300px;
+  left: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Circe Bold', Arial, Helvetica, sans-serif;
+}
+
+.hero__scroll__text {
+  transform: rotate(-90deg);
+}
+
+.hero__scroll__icon {
+  position: absolute;
+  left: 33px;
+  bottom: -105px;
+  width: 20px;
+  animation-duration: 2s;
+  animation-name: bounce-1;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-line {
+  position: absolute;
+  left: 0;
+  top: 73px;
+  width: 45px;
+  height: 1px;
+  background: #04ff14;
+}
+
+.hero-title {
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.hero-infoBox {
+  position: absolute;
+  background: rgba(72, 0, 122, 0.5) url("../img/hero/sicles.svg") no-repeat right -300px bottom -300px;
+  background-size: auto 600px;
+  right: 0;
+  top: 340px;
+  display: block;
+  height: 540px;
+  min-width: 33%;
+  padding: 50px 40px;
+}
+
+.hero-infoBox__right, .hero-infoBox__left {
+  display: inline-block;
+}
+
+.hero-infoBox__left {
+  background: #000;
+  margin-right: 30px;
+}
+
+.hero-infoBox-wrap {
+  background: indigo;
+  font-family: 'Circe Bold', Arial, Helvetica, sans-serif;
+  display: block;
+}
+
+.hero-infoBox__dig {
+  display: block;
+  font-size: 25px;
+  color: #04ff14;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.hero-infoBox__desc {
+  padding-top: 10px;
+  display: block;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
